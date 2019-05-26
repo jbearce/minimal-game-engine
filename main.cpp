@@ -6,6 +6,8 @@
 
 using namespace std;
 
+//Pulls in the "map" from a simple text file. Outputs as
+//a simple 2D char array.
 vector<vector<char>> import_file(string input) {
     vector<vector<char>> output;
     ifstream inputFile(input);
@@ -30,6 +32,8 @@ struct coord {
     //current player coordinates:
     int x = 11;
     int y = 1;
+    int coordWidth = 1;
+    int coordHeight = 1;
 };
 
 void clear_screen() {
@@ -149,13 +153,13 @@ int main() {
     noecho();
     refresh();
     draw_map(gameMap, mapSize, playerPos);
-    //nodelay(stdscr, TRUE);
     while(char(userInput) != 'q') {
         userInput = getch();
         if (char(userInput) != 'q') {
             move_player(gameMap, mapSize, playerPos, char(userInput));
             userInput = 0;
         }
+
     }
     endwin();
     return 0;

@@ -1,3 +1,4 @@
+#note: this makefile is not configured for the current project. It's an example only
 main_reqs = ./includes/game_core.hpp ./includes/game_screen.hpp
 game_screen_reqs = ./includes/game_core.hpp ./includes/game_screen.hpp
 game_terrain_reqs = ./includes/game_core.hpp ./includes/game_terrain.hpp $(main_reqs)
